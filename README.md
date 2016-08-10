@@ -1,6 +1,6 @@
-# Grafana Docker image
+# Grafana-Warp10 Docker image
 
-This project builds a Docker image with the latest master build of Grafana.
+This project builds a Docker image with Grafana and warp10 data source.
 
 ## Running your Grafana container
 
