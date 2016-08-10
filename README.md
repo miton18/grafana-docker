@@ -2,6 +2,8 @@
 
 This project builds a Docker image with Grafana and warp10 data source.
 
+[![CircleCI](https://circleci.com/gh/miton18/grafana-docker-warp10/tree/master.svg?style=svg)](https://circleci.com/gh/miton18/grafana-docker-warp10/tree/master)
+
 ## Running your Grafana container
 
 Start your container binding the external port `3000`.
