@@ -9,7 +9,7 @@ This project builds a Docker image with Grafana and warp10 data source.
 Start your container binding the external port `3000`.
 
 ```
-docker run -d --name=grafana -p 3000:3000 grafana/grafana
+docker run -d --name=grafana -p 3000:3000 miton18/grafana-docker-warp10
 ```
 
 Try it out, default admin user is admin/admin.
@@ -26,7 +26,7 @@ docker run \
   --name=grafana \
   -e "GF_SERVER_ROOT_URL=http://grafana.server.name" \
   -e "GF_SECURITY_ADMIN_PASSWORD=secret" \
-  grafana/grafana
+  miton18/grafana-docker-warp10
 ```
 
 ## Grafana container with persistent storage (recommended)
@@ -41,7 +41,7 @@ docker run \
   -p 3000:3000 \
   --name=grafana \
   --volumes-from grafana-storage \
-  grafana/grafana
+  miton18/grafana-docker-warp10
 ```
 
 ## Installing plugins for Grafana 3
@@ -54,20 +54,8 @@ docker run \
   -p 3000:3000 \
   --name=grafana \
   -e "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource" \
-  grafana/grafana
+  miton18/grafana-docker-warp10
 ```
-
-## Running specific version of Grafana
-
-```
-# specify right tag, e.g. 2.6.0 - see Docker Hub for available tags
-docker run \
-  -d \
-  -p 3000:3000 \
-  --name grafana \
-  grafana/grafana:2.6.0
-```
-
 ## Configuring AWS credentials for CloudWatch support
 
 ```
@@ -79,7 +67,7 @@ docker run \
   -e "GF_AWS_default_ACCESS_KEY_ID=YOUR_ACCESS_KEY" \
   -e "GF_AWS_default_SECRET_ACCESS_KEY=YOUR_SECRET_KEY" \
   -e "GF_AWS_default_REGION=us-east-1" \
-  grafana/grafana
+  miton18/grafana-docker-warp10
 ```
 
 You may also specify multiple profiles to `GF_AWS_PROFILES` (e.g.
