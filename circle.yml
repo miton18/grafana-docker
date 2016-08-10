@@ -20,9 +20,9 @@ dependencies:
     - docker info
     - > 
       if [ -n "${CREATE_MASTER_IMAGE}" ]; then
-        ./build.sh latest master
+        sudo ./build.sh latest master
       else
-        ./build.sh
+        sudo ./build.sh
       fi
 
 test:
