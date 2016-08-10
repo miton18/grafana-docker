@@ -7,6 +7,11 @@ machine:
   services:
     - docker
 
+checkout:
+  post:
+    - git submodule init 
+    - git submodule update
+
 dependencies:
   cache_directories:
     - "~/docker"
@@ -23,16 +28,3 @@ dependencies:
 test:
   override:
      - echo "test"
-
-deployment:
-  develop:
-    branch: master
-    owner: grafana
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - >
-        if [ -n "${CREATE_MASTER_IMAGE}" ]; then
-          ./push_to_docker_hub.sh master
-        else
-          ./push_to_docker_hub.sh
-        fi
