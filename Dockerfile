@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ARG GRAFANA_VERSION
+ENV GRAFANA_VERSION 2.6.0
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install libfontconfig curl ca-certificates && \
@@ -19,5 +19,8 @@ VOLUME ["/var/lib/grafana", "/var/lib/grafana/plugins", "/var/log/grafana", "/et
 EXPOSE 3000
 
 COPY ./run.sh /run.sh
+
+ADD grafana-warp10 /usr/share/grafana/public/app/plugins/datasource/
+
 
 ENTRYPOINT ["/run.sh"]
