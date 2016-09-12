@@ -23,4 +23,5 @@ COPY ./run.sh /run.sh
 ADD grafana-warp10 /usr/share/grafana/public/app/plugins/datasource/
 
 
-ENTRYPOINT ["/run.sh"]
+#ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ls -la /
