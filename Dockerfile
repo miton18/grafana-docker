@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ENV GRAFANA_VERSION 3.1.1-1470047149
+ENV GRAFANA_VERSION 3.1.1-1469444398
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install libfontconfig curl ca-certificates git && \
