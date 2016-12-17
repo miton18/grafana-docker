@@ -1,5 +1,7 @@
 #!/bin/bash
-_grafana_tag=$1
+
+_grafana_version=$1
+_grafana_tag=$2
 _release_build=false
 
 if [ -z "${_grafana_version}" ]; then

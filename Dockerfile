@@ -16,7 +16,7 @@ RUN dpkg -i /tmp/grafana.deb && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
-VOLUME ["/var/lib/grafana", "/var/lib/grafana/plugins", "/var/log/grafana", "/etc/grafana"]
+VOLUME ["/var/lib/grafana", "/var/log/grafana", "/etc/grafana"]
 
 EXPOSE 3000
 
