@@ -39,6 +39,9 @@ if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then
   IFS=$OLDIFS
 fi
 
+mkdir -p /var/lib/grafana/plugins/grafana-warp10-datasource
+cp -R /grafana-warp10/dist /var/lib/grafana/plugins/grafana-warp10-datasource
+
 exec gosu grafana /usr/sbin/grafana-server  \
   --homepath=/usr/share/grafana             \
   --config=/etc/grafana/grafana.ini         \

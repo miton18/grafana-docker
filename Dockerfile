@@ -1,11 +1,10 @@
 FROM debian:jessie
 
-ENV GRAFANA_VERSION 3.1.1-1469444398
+ENV GRAFANA_VERSION 4.0.2-1481203731
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install libfontconfig curl ca-certificates git && \
     apt-get clean && \
-    #curl https://grafanarel.s3.amazonaws.com/builds/grafana_${GRAFANA_VERSION}_amd64.deb > /tmp/grafana.deb 
     curl https://grafanarel.s3.amazonaws.com/builds/grafana_${GRAFANA_VERSION}_amd64.deb > /tmp/grafana.deb
     
 RUN dpkg -i /tmp/grafana.deb && \
@@ -23,8 +22,5 @@ EXPOSE 3000
 COPY ./run.sh /run.sh
 
 RUN git clone https://github.com/cityzendata/grafana-warp10.git
-RUN cp -r ./grafana-warp10/dist /usr/share/grafana/public/app/plugins/datasource/grafana-warp10-datasource
-#ADD grafana-warp10 /usr/share/grafana/public/app/plugins/datasource/
-
 
 ENTRYPOINT ["/run.sh"]
