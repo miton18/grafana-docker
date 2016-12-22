@@ -19,7 +19,7 @@ VOLUME ["/var/lib/grafana", "/var/log/grafana", "/etc/grafana"]
 
 EXPOSE 3000
 
-COPY ./run.sh /run.sh
+COPY ./run.sh /run.sh   
 
 RUN git clone https://github.com/cityzendata/grafana-warp10.git
 
