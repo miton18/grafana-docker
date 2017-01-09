@@ -39,6 +39,7 @@ if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then
   IFS=$OLDIFS
 fi
 
+# Place warp10 plugin in the good directory
 mkdir -p /var/lib/grafana/plugins/grafana-warp10-datasource
 cp -R /grafana-warp10/dist /var/lib/grafana/plugins/grafana-warp10-datasource
 

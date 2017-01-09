@@ -1,3 +1,0 @@
-[submodule "grafana-warp10"]
-	path = grafana-warp10
-	url = https://github.com/cityzendata/grafana-warp10
